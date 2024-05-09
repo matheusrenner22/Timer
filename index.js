@@ -1,4 +1,4 @@
-const executarPrograma = () => {
+const relogio = () => {
     const relogio = document.querySelector('.relogio');
     const iniciar = document.querySelector('.iniciar');
     let running = false;
@@ -18,14 +18,13 @@ const executarPrograma = () => {
 
     function iniciaRelogio() {
         clearInterval();
-        relogio.classList.remove('pausando');
-        running = true;
-        iniciar.innerHTML = "pausar"
-
         timer = setInterval(() => {
             segundos++;
             relogio.innerHTML = criaSegundosDaHora(segundos);
-        }, 1000);
+        }, 100);
+        relogio.classList.remove('pausando');
+        running = true;
+        iniciar.innerHTML = "pausar"
     }
 
     function pausarRelogio() {
@@ -64,4 +63,4 @@ const executarPrograma = () => {
     });
 };
 
-executarPrograma();
+relogio();
