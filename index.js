@@ -2,7 +2,6 @@ const executarPrograma = () => {
     const relogio = document.querySelector('.relogio');
     const iniciar = document.querySelector('.iniciar');
     let running = false;
-
     let segundos = 0;
     let timer;
 
@@ -19,6 +18,7 @@ const executarPrograma = () => {
 
     function iniciaRelogio() {
         clearInterval();
+        relogio.classList.remove('pausando');
         running = true;
         iniciar.innerHTML = "pausar"
 
@@ -32,6 +32,7 @@ const executarPrograma = () => {
         clearInterval(timer);
         running = false;
         iniciar.innerHTML = 'continuar'
+        relogio.classList.remove('iniciando');
     }
 
     function zerarRelogio() {
@@ -47,14 +48,18 @@ const executarPrograma = () => {
         const elemento = event.target;
 
         if (elemento.classList.contains('iniciar')) {
-            if(running == false)
+            if (running === false) {
                 iniciaRelogio();
-            else
+                relogio.classList.add('iniciando');
+            } else {
                 pausarRelogio();
+                relogio.classList.add('pausando');
+            }
         }
 
         if (elemento.classList.contains('zerar')) {
             zerarRelogio();
+            relogio.classList.remove('iniciando', 'pausando');
         }
     });
 };

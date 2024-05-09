@@ -55,8 +55,12 @@ body {
     background-color: rgb(0, 175, 175);
 }
 
-.remove-iniciar {
-    display: none;
+.iniciando {
+    color: #04AA6D;
+}
+
+.pausando {
+    color: crimson;
 }
 
 footer {
