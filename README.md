@@ -11,4 +11,4 @@ Um cronômetro feito por mim, de forma simples
 
 ## Link do site
 
-URL:
+URL: [Cronômetro](https://matheusrenner22.github.io/cronometro/)
