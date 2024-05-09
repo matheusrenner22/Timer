@@ -29,6 +29,7 @@ const relogio = () => {
     }
 
     function zerarRelogio() {
+        clearInterval(cronometro);
         iniciar.innerHTML = 'iniciar';
         running = false;
         hora = 0;
